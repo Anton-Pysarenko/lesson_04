@@ -39,3 +39,17 @@ var tags = [
         tag[key] = tags[i].attrs[key]
     }
   }
+
+var style = document.createElement('style');
+style.type = 'text/css';
+style.innerHTML = '.redBack { background-color: red!important; }';
+document.getElementsByTagName('head')[0].appendChild(style);
+
+var button = document.body.appendChild(document.createElement('button'))
+button.innerText = 'click'
+button.onclick = function(event) {
+    var elems = document.body.getElementsByTagName('div')
+        for(var i=0; i<elems.length; i++) {
+        elems[i].className = 'redBack'
+    }
+}
